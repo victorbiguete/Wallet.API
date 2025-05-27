@@ -6,5 +6,12 @@ using System.Threading.Tasks;
 
 namespace Wallet.Services.Contracts.Response.Users
 {
-    public record UserResponse(Guid Id,string Name, Guid walletId, DateTime CreatedAt, DateTime LastUpdatedAt);
+    public record UserResponse
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public Guid WalletId { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime LastUpdatedAt { get; set; }
+    }
 }

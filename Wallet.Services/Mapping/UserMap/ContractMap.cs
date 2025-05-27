@@ -16,8 +16,8 @@ namespace Wallet.Services.Mapping.UserMap
         {
             return new User
             {
-                Name = request.name,
-                Username = request.username,
+                Name = request.Name,
+                Username = request.Username,
                 PasswordHash = hash,
                 PasswordSalt = salt
             };
@@ -48,25 +48,25 @@ namespace Wallet.Services.Mapping.UserMap
         public static List<UserResponse> MapToListUserResponse(this List<User> user)
         {
             return user.Select(user => new UserResponse
-            (
-                Id : user.Id,
-                walletId : user.WalletId,
-                Name : user.Name,
-                CreatedAt : user.CreatedAt,
-                LastUpdatedAt : user.LastUpdatedAt
-            )).ToList();
+            {
+                Id = user.Id,
+                WalletId = user.WalletId,
+                Name = user.Name,
+                CreatedAt = user.CreatedAt,
+                LastUpdatedAt = user.LastUpdatedAt
+            }).ToList();
         }
 
         public static UserResponse MapToUserResponse(this User user)
         {
             return new UserResponse
-            (
-                Id : user.Id,
-                Name : user.Name,
-                walletId : user.WalletId,
-                CreatedAt : user.CreatedAt,
-                LastUpdatedAt : user.LastUpdatedAt
-            );
+            {
+                Id = user.Id,
+                Name = user.Name,
+                WalletId = user.WalletId,
+                CreatedAt = user.CreatedAt,
+                LastUpdatedAt = user.LastUpdatedAt
+            };
         }
 
 
